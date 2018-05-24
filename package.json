@@ -1,6 +1,6 @@
 {
   "name": "dynamic-serial-promise-all",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Promise.all() for the senario where serially dependent promises are dynamically defined",
   "main": "src/index.js",
   "scripts": {

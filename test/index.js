@@ -22,6 +22,14 @@ describe('basics', function(){
         promise_all_manager.wait_for(Promise.resolve(true));
         assert.equal(promise_all_manager.promise_list.length, 1);
     })
+    it('should be able to reset the promise list', function(){
+        var promise_all_manager = new (require(process.env.src_root))();
+        assert.equal(promise_all_manager.promise_list.length, 0, "ensure at beginning promise list length is zero");
+        promise_all_manager.wait_for(Promise.resolve(true));
+        assert.equal(promise_all_manager.promise_list.length, 1, "ensure after loading promise list length is one");
+        promise_all_manager.reset();
+        assert.equal(promise_all_manager.promise_list.length, 0, "ensure after reseting promise list length is zero")
+    })
 })
 describe('cases', function(){
     it('should handle slow dependent processes', async function(){

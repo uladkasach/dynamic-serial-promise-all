@@ -46,6 +46,12 @@ Dynamic_Serial_Promise_All.prototype = {
             await sleep(this.safety_lap_wait_time); // wait for 100 ms
             return this.promise_all_promises_have_resolved(true); // run safety lap
         }
-    }
+    },
+    reset : function(){
+        /*
+            utility function to cleanly empty the promise_list 
+        */
+        this.promise_list = [];
+    },
 }
 module.exports = Dynamic_Serial_Promise_All;
